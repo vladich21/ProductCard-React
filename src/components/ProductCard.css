@@ -1,0 +1,85 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 2px solid #c5c5c5; /* Рамка */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 200px;
+  margin: 8px;
+  height: 380px; /* Ограничиваем высоту карточки */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-card__img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover; /* Изображение не обрезается */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.product-card__body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.product-card__title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Урезаем длинные заголовки */
+}
+
+.product-card__price {
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-card__description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  height: 40px; /* Ограничиваем высоту для описания */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Добавляем многоточие для длинного текста */
+}
+
+.product-card__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.like-btn, .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.like-btn:hover, .delete-btn:hover {
+  opacity: 0.7;
+}
+
+.delete-btn svg, .like-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    width: calc(100% - 16px);
+  }
+}
